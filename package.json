@@ -31,6 +31,9 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "object-assign": "4.1.1",
@@ -103,5 +106,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "proxy": "http://localhost:1990"
 }
