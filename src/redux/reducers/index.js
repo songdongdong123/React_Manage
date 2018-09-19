@@ -22,6 +22,6 @@ export function getTestInfo () {
   return dispatch => {
     setTimeout(() => {
       dispatch(actions.getTestSuccess({name: 'ethan', age: 18, work: 'web'}))
-    }, 5000)
+    }, 1000)
   }
 }

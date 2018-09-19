@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
+import { getTest } from './api/test';
 import { connect } from 'react-redux';
 import { getTestInfo } from './redux/reducers';
+// import axios from 'axios';
+// http://127.0.0.1:3001/name
 @connect(
   state => state,
   {getTestInfo}
@@ -9,12 +12,16 @@ import { getTestInfo } from './redux/reducers';
 )
 class App extends Component {
   componentDidMount () {
-    this.props.getTestInfo();
+    // this.props.getTestInfo();
   }
   render() {
     return (
       <div>
-        <Button>xxxxx</Button>
+        <Button onClick = {() => {
+          getTest().then(res => {
+            console.log(res)
+          })
+        }}>xxxxx</Button>
       </div>
     )
   }
