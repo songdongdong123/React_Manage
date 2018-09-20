@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import stroe from './redux';
 import './index.css';
-import App from './App';
+import Index from './pages/Index';
 
 ReactDOM.render(
   <Provider store={stroe}>
-    <App />
+    <Index />
   </Provider>
   , document.getElementById('root'));
