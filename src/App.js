@@ -18,7 +18,9 @@ class App extends Component {
     return (
       <div>
         <Button onClick = {() => {
-          getTest().then(res => {
+          getTest({
+            name: '123'
+          }).then(res => {
             console.log(res)
           })
         }}>xxxxx</Button>

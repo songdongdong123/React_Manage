@@ -13,11 +13,14 @@ Router.get('/user1', async (ctx, next) => {
   await next();
 })
 Router.post('/name', async (ctx, next) => {
+  const body = ctx.request.body
   ctx.type = 'json';
   ctx.body = {
     name: 'Aimi',
-    age: 15
+    age: 15,
+    data: body
   }
+  await next();
 })
 
 app.use(bodyParser())
