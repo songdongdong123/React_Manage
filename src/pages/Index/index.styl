@@ -1,17 +1,19 @@
 .container{
   display: flex;
   .nav_left{
-    height:calc(100vh);
+    min-height:calc(100vh);
     width 256px;
     background: #001529;
   }
   .main{
     flex: 1;
-    height:calc(100vh);
-    background: pink;
+    min-height:calc(100vh);
+    background: $colorL;
     .content{
+      padding: 20px;
       position: relative;
-      padding: 20px;  
+      margin: 20px;
+      background: #fff;  
     }  
   }  
 }

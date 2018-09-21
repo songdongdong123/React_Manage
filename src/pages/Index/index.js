@@ -2,9 +2,9 @@ import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import NavLeft from '../../components/NavLeft';
+import Home from '../../pages/Home';
 import { Row, Col} from 'antd';
-import './index.styl'
-
+import './index.styl';
 export default class Index extends React.Component {
   render () {
     return (
@@ -15,7 +15,7 @@ export default class Index extends React.Component {
         <Col span="20" className="main">
           <Header />
           <Row className="content">
-            content
+            <Home />
           </Row>
           <Footer />
         </Col>

@@ -1,7 +1,7 @@
 import axios from 'axios';
-// import { Toast } from 'antd';
 import qs from 'qs';
 import getBaseUrl from './baseurl';
+import JsonP from 'jsonp';
 
 // 拦截请求
 let config = {
@@ -33,8 +33,22 @@ const get = (url, params) => {
   return axios.get(url, config)
 }
 
-const post = (url, params, con) => {
+const post = (url, params, config) => {
   return axios.post(url, params, config)
+}
+
+const jsonp = (options) => {
+  return new Promise((resolve, reject) => {
+    JsonP(options.url, {
+        param: 'callback'
+    }, function (err, response) {
+        if (response.status === 'success') {
+            resolve(response);
+        } else {
+            reject(err);
+        }
+    })
+  })
 }
 
 // 用来拼接get请求的时候的参数
@@ -50,5 +64,6 @@ let urlEncode = (url, data) => {
 
 export {
   get,
-  post
+  post,
+  jsonp
 }

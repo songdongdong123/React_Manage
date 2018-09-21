@@ -238,7 +238,19 @@ module.exports = {
               require.resolve('style-loader'),
               require.resolve('css-loader'),
               require.resolve('less-loader'),
-              require.resolve('stylus-loader')
+              require.resolve('stylus-loader'),
+              {
+                loader: require.resolve('stylus-loader'),
+                options: {
+                  import: [
+                    path.join(__dirname, "../src/common/stylus/index.styl")
+                  ],
+                  paths: [
+                    path.join(__dirname, "../src/common/"),
+                    path.join(__dirname, "../"),
+                  ]
+                }
+              }
             ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
