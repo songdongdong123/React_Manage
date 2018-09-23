@@ -16,6 +16,16 @@ export const routeLayOutMap = [
     name: 'models',
     exact: true,
     component:_import_views('UI/models')
+  }, {
+    path: '/ui/loadings',
+    name: 'models',
+    exact: true,
+    component:_import_views('UI/loading')
+  }, {
+    path: '/ui/messages',
+    name: 'models',
+    exact: true,
+    component:_import_views('UI/messages')
   },{
     path: '/404',
     name: 'nomatch',
