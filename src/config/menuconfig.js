@@ -70,6 +70,24 @@ const menuList = [
       ]
   },
   {
+      title:'图标',
+      key:'/charts',
+      children:[
+          {
+              title:'柱形图',
+              key:'/charts/bar'
+          },
+          {
+              title:'饼图',
+              key:'/charts/pie'
+          },
+          {
+              title:'折线图',
+              key:'/charts/line'
+          },
+      ]
+  },
+  {
       title:'富文本',
       key:'/rich'
   },
@@ -98,24 +116,6 @@ const menuList = [
   {
       title:'车辆地图',
       key:'/bikeMap'
-  },
-  {
-      title:'图标',
-      key:'/charts',
-      children:[
-          {
-              title:'柱形图',
-              key:'/charts/bar'
-          },
-          {
-              title:'饼图',
-              key:'/charts/pie'
-          },
-          {
-              title:'折线图',
-              key:'/charts/line'
-          },
-      ]
   },
   {
       title:'权限设置',

@@ -7,11 +7,15 @@ const SubMenu = Menu.SubMenu;
 
 
 export default class NavLeft extends React.Component {
+  rootSubmenuKeys = menuList.map((v) => {
+    return v.key
+  })
   constructor (props) {
     super(props);
     this.state = {
       theme: 'dark',
-      current: '1'
+      current: [],
+      openKeys: []
     }
   }
   componentWillMount () {
@@ -39,6 +43,16 @@ export default class NavLeft extends React.Component {
       current: e.key,
     });
   }
+  onOpenChange = (openKeys) => {
+    const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+    if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+      this.setState({ openKeys });
+    } else {
+      this.setState({
+        openKeys: latestOpenKey ? [latestOpenKey] : [],
+      });
+    }
+  }
   render () {
     return (
       <div className="nav_left_container">
@@ -48,10 +62,9 @@ export default class NavLeft extends React.Component {
         </div>
         <Menu
           theme={this.state.theme}
-          onClick={this.handleClick}
           style={{ width: 256 }}
-          defaultOpenKeys={['sub1']}
-          selectedKeys={[this.state.current]}
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
           mode="inline"
         >
           {

@@ -1,19 +1,26 @@
 .container{
   display: flex;
   .nav_left{
-    min-height:calc(100vh);
+    min-height:100%;
     width 256px;
     background: #001529;
+    position: fixed;
+    z-index: 100;
   }
   .main{
-    flex: 1;
+    width: calc(100% - 256px);
+    margin-left: 256px;
     min-height:calc(100vh);
     background: $colorL;
+    box-sizing: border-box;
     .content{
       padding: 20px;
+      box-sizing: border-box;
       position: relative;
       margin: 20px;
-      background: #fff;  
+      background: #fff;
+      min-height: calc(100vh - 190px);
+      // overflow-y:scroll; 
     }  
   }  
 }
