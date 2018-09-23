@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import stroe from './redux';
 // import Index from './pages/Index';
-import Routers from './pages/route-demo/route2/router'
+import Routers from './pages/route-demo/route3/router'
 import './common/stylus/index.styl';
 import './common/stylus/icon.styl';
 ReactDOM.render(
