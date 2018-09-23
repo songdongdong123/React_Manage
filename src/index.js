@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import stroe from './redux';
 // import Index from './pages/Index';
-import Routers from './pages/route-demo/route3/router'
+// import Routers from './pages/route-demo/route3/router'
+import Router from './router'
 import './common/stylus/index.styl';
 import './common/stylus/icon.styl';
 ReactDOM.render(
   <Provider store={stroe}>
-    <Routers />
+    <Router />
   </Provider>
   , document.getElementById('root'));

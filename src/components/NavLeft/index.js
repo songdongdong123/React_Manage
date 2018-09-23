@@ -1,5 +1,6 @@
 import React from 'react';
 import menuList from '../../config/menuconfig';
+import {Link} from 'react-router-dom';
 import { Menu } from 'antd';
 import './index.styl'
 const SubMenu = Menu.SubMenu;
@@ -28,7 +29,9 @@ export default class NavLeft extends React.Component {
           </SubMenu>
         )
       }
-      return <Menu.Item title={item.title} key={item.key}>{item.title}</Menu.Item>
+      return <Menu.Item title={item.title} key={item.key}>
+        <Link to={item.key}>{item.title}</Link>
+      </Menu.Item>
     })
   }
   handleClick = (e) => {

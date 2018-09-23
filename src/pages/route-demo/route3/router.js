@@ -48,7 +48,7 @@ export default class Routes extends React.Component {
               <Route exact={true}   path='/' component={Homes}></Route>
                     <Route path="/main" render={() =>
                         <Main>
-                          {/*:value代表的是这个路由是一个动态路由，参数是value*/}
+                       a   {/*:value代表的是这个路由是一个动态路由，参数是value*/}
                           {/*你可以认为这里的Info组件就是一个动态组件，他可以根据不同的参数去渲染不同的数据*/}
                           <Route   path="/main/:value" component={Info}></Route>
                         </Main>
