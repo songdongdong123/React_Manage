@@ -23,20 +23,28 @@ function Homes () {
     </div>
   )
 }
+function Test () {
+  return (
+    <div>THIS is Test</div>
+  )
+}
 export default class Routes extends React.Component {
   render () {
     return (
       <HashRouter>
-        <Home>
-          <Route exact={true}  path='/' component={Homes}></Route>
-            <Route path="/main" render={() =>
-                <Main>
-                  <Route  path="/main/a" component={About}></Route>
-                </Main>
-            }></Route>
-            <Route  path="/about" component={About}></Route>
-            <Route  path="/topics" component={Topics}></Route>
-        </Home>
+        <Switch>
+          <Route path="/test" component={Test}></Route>
+          <Home>
+            <Route exact={true}   path='/' component={Homes}></Route>
+                <Route path="/main" render={() =>
+                    <Main>
+                      <Route   path="/main/a" component={About}></Route>
+                    </Main>
+                }></Route>
+              <Route  path="/about" component={About}></Route>
+              <Route  path="/topics" component={Topics}></Route>
+          </Home>
+        </Switch>
       </HashRouter>
     )
   }
