@@ -13,7 +13,7 @@ const menuList = [
           },
           {
               title:'弹框',
-              key:'/ui/modals',
+              key:'/ui/models',
           },
           {
               title:'Loading',

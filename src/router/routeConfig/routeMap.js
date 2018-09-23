@@ -11,6 +11,11 @@ export const routeLayOutMap = [
     name: 'buttons',
     exact: true,
     component:_import_views('UI/button')
+  }, {
+    path: '/ui/models',
+    name: 'models',
+    exact: true,
+    component:_import_views('UI/models')
   },{
     path: '/404',
     name: 'nomatch',
