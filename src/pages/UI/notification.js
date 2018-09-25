@@ -54,6 +54,21 @@ export default class Modals extends React.Component {
       description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
     });
   }
+  openNotification5 = () => {
+    const key = 'updatable';
+    notification.open({
+      key,
+      message: 'Notification Title',
+      description: 'description.',
+    });
+    setTimeout(() => {
+      notification.open({
+        key,
+        message: 'New Title',
+        description: 'New description.',
+      });
+    }, 1000);
+  }
   render () {
     const options = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
     return(
@@ -88,6 +103,10 @@ export default class Modals extends React.Component {
               return <Button type="primary" onClick={() => {this.openNotification4(v)}}>{v}</Button>
             })
           }
+        </Card>
+        <Card title="更新消息内容" className="Card">
+          <p>可以通过唯一的 key 来更新内容。</p>
+          <Button type="primary" onClick={() => {this.openNotification5()}}>更新消息内容</Button>
         </Card>
       </div>
     )
