@@ -26,7 +26,19 @@ export const routeLayOutMap = [
     path: '/ui/notification',
     name: 'models',
     component:_import_views('UI/notification')
-  },{
+  }, {
+    path: '/ui/tabs',
+    name: 'models',
+    component:_import_views('UI/tabs')
+  }, {
+    path: '/ui/gallery',
+    name: 'models',
+    component:_import_views('UI/gallery')
+  }, {
+    path: '/ui/carousel',
+    name: 'models',
+    component:_import_views('UI/carousel')
+  }, {
     path: '/404',
     name: 'nomatch',
     component:_import_views('NoMatch')
