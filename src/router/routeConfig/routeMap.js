@@ -9,27 +9,26 @@ export const routeLayOutMap = [
   },{
     path: '/ui/buttons',
     name: 'buttons',
-    exact: true,
     component:_import_views('UI/button')
   }, {
     path: '/ui/models',
     name: 'models',
-    exact: true,
     component:_import_views('UI/models')
   }, {
     path: '/ui/loadings',
     name: 'models',
-    exact: true,
     component:_import_views('UI/loading')
   }, {
     path: '/ui/messages',
     name: 'models',
-    exact: true,
     component:_import_views('UI/messages')
+  }, {
+    path: '/ui/notification',
+    name: 'models',
+    component:_import_views('UI/notification')
   },{
     path: '/404',
     name: 'nomatch',
-    exact: true,
     component:_import_views('NoMatch')
   }
 ];
