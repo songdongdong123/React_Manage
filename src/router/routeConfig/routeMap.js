@@ -39,6 +39,14 @@ export const routeLayOutMap = [
     name: 'models',
     component:_import_views('UI/carousel')
   }, {
+    path: '/form/login',
+    name: 'models',
+    component:_import_views('Form/login')
+  }, {
+    path: '/form/reg',
+    name: 'models',
+    component:_import_views('Form/reg')
+  }, {
     path: '/404',
     name: 'nomatch',
     component:_import_views('NoMatch')
