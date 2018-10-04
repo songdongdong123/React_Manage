@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Table, Divider, Tag  } from 'antd'
+import { Card, Table, Divider, Tag, Button  } from 'antd'
 import '../UI/base.styl'
 const { Column, ColumnGroup } = Table;
 const columns = [{
@@ -85,14 +85,57 @@ const rowSelection = {
     name: record.name,
   }),
 };
+
+const columns1 = [{
+  title: 'Name',
+  dataIndex: 'name',
+}, {
+  title: 'Age',
+  dataIndex: 'age',
+}, {
+  title: 'Address',
+  dataIndex: 'address',
+}];
+
+const data2 = [];
+for (let i = 0; i < 46; i++) {
+  data.push({
+    key: i,
+    name: `Edward King ${i}`,
+    age: 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
+
 export default class Modals extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      selectedRowKeys: [], // Check here to configure the default column
+      loading: false,
     };
   }
+  start = () => {
+    this.setState({ loading: true });
+    // ajax request after empty completing
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false,
+      });
+    }, 1000);
+  }
+  onSelectChange = (selectedRowKeys) => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
+  }
   render () {
+    const { loading, selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+    };
+    const hasSelected = selectedRowKeys.length > 0;
     return(
       <div>
         <Card title="基本用法" className="Card">
@@ -149,8 +192,22 @@ export default class Modals extends React.Component {
           <p>默认点击 checkbox 触发选择行为，需要点击行触发可以参考例子：https://codesandbox.io/s/000vqw38rl</p>
            <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
         </Card>
-        <Card title="滑动" className="Card">
-          
+        <Card title="选择和操作" className="Card">
+          <p>选择后进行操作，完成后清空选择，通过 rowSelection.selectedRowKeys 来控制选中项。</p>
+          <div style={{ marginBottom: 16 }}>
+            <Button
+              type="primary"
+              onClick={this.start}
+              disabled={!hasSelected}
+              loading={loading}
+            >
+              Reload
+            </Button>
+            <span style={{ marginLeft: 8 }}>
+              {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
+            </span>
+          </div>
+          <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
         </Card>
         <Card title="附加内容" className="Card">
           
