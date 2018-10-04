@@ -5,35 +5,34 @@ const { Column, ColumnGroup } = Table;
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
-  key: 'name',
-  render: text => <a href="javascript:viod(0);">{text}</a>,
+  render: text => <a href="javascript:;">{text}</a>,
 }, {
   title: 'Age',
   dataIndex: 'age',
-  key: 'age',
 }, {
   title: 'Address',
   dataIndex: 'address',
-  key: 'address',
+}];
+const datass = [{
+  key: '1',
+  name: 'John Brown',
+  age: 32,
+  address: 'New York No. 1 Lake Park',
 }, {
-  title: 'Tags',
-  key: 'tags',
-  dataIndex: 'tags',
-  render: tags => (
-    <span>
-      {tags.map(tag => <Tag color="blue" key={tag}>{tag}</Tag>)}
-    </span>
-  ),
+  key: '2',
+  name: 'Jim Green',
+  age: 42,
+  address: 'London No. 1 Lake Park',
 }, {
-  title: 'Action',
-  key: 'action',
-  render: (text, record) => (
-    <span>
-      <a href="javascript:;">Invite {record.name}</a>
-      <Divider type="vertical" />
-      <a href="javascript:;">Delete</a>
-    </span>
-  ),
+  key: '3',
+  name: 'Joe Black',
+  age: 32,
+  address: 'Sidney No. 1 Lake Park',
+}, {
+  key: '4',
+  name: 'Disabled User',
+  age: 99,
+  address: 'Sidney No. 1 Lake Park',
 }];
 
 const data = [{
@@ -77,7 +76,15 @@ const datas = [{
   address: 'Sidney No. 1 Lake Park',
   tags: ['cool', 'teacher'],
 }];
-
+const rowSelection = {
+  onChange: (selectedRowKeys, selectedRows) => {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  getCheckboxProps: record => ({
+    disabled: record.name === 'Disabled User', // Column configuration not to be checked
+    name: record.name,
+  }),
+};
 export default class Modals extends React.Component {
   constructor(props) {
     super(props);
@@ -138,8 +145,9 @@ export default class Modals extends React.Component {
             />
           </Table>
         </Card>
-        <Card title="图标" className="Card">
-          
+        <Card title="第一列是联动的选择框。" className="Card">
+          <p>默认点击 checkbox 触发选择行为，需要点击行触发可以参考例子：https://codesandbox.io/s/000vqw38rl</p>
+           <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
         </Card>
         <Card title="滑动" className="Card">
           
