@@ -60,8 +60,12 @@ const menuList = [
       key:'/table',
       children:[
           {
-              title:'基础表格',
-              key:'/table/basic',
+              title:'基础表格一',
+              key:'/table/basic1',
+          },
+          {
+              title:'基础表格二',
+              key:'/table/basic2',
           },
           {
               title:'高级表格',

@@ -47,9 +47,13 @@ export const routeLayOutMap = [
     name: 'models',
     component:_import_views('Form/reg')
   }, {
-    path: '/table/basic',
+    path: '/table/basic1',
     name: 'models',
     component:_import_views('Tables/tables')
+  }, {
+    path: '/table/basic2',
+    name: 'models',
+    component:_import_views('Tables/tables1')
   }, {
     path: '/404',
     name: 'nomatch',
